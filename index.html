@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Quick Work Order Viewer </title>
+
+	<link rel="stylesheet" type="text/css" href="assets/style.css ">
+
+</head>
+<body>
+
+	<h1> Quick Work Order Viewer </h1>
+	<p>Copy the work order you want into the form below. </p>
+	<p>The work order will open in a new tab when you hit the submit button.</p>
+
+	<div id="wo-form">
+		<form>
+		  Enter Work Order Number:<br>
+		  <input type="text" id="work-order1"> <br>
+		  <input id="display-wo" value="submit" type="submit">
+		</form> 
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+		  	//Retrieve work order from user
+	  	$("#display-wo").on("click", function(event) {
+	      event.preventDefault();
+	      var workOrder1 = $("#work-order1").val().trim();
+	      //generate new tabs
+	      var link1 = "http://spfasterapp/FASTER/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=" + workOrder1;
+	      window.open(link1, '_blank');
+	    });
+		
+
+
+	</script>
+
+
+
+</body>
+</html>
